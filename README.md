@@ -80,7 +80,7 @@ python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./wor
 
 
 ## Results
-|    name     |    backbone     |  input size |  iteration  | ms-train | GN | val. box AP | val. mask AP | download|
+|    name     |    backbone     |  input size |  iter.  | ms-train | GN | val. box AP | val. mask AP | download|
 | :---------: | :-------------: | :-------------------: | :-----: | :-----: | :-----:| :-----: |:------: | :-----------------: |
 |   SipMask   |     ResNet-50     |  800 &times; 1333  |  1x  |   no  |  yes  |    38.2 |    33.5 |  [model](https://drive.google.com/open?id=1t-RSMObxjeSJvHW1tQl8uBUQUU8RKTZO)         |
 |   SipMask   |     ResNet-50     |  800 &times; 1333   |  2x  |  yes |   yes  |   40.8 |   35.6  |  [model](https://drive.google.com/open?id=1r7u2WUOuFSWRfRBoWRCADJo7nEchwFzq)         |
