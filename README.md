@@ -3,8 +3,8 @@ The official implementation of "SipMask: Spatial Information Preservation for Fa
 
 - **Single-stage instance segmentation for both image and video instance segmentation.**
 - Two different versions are provided: **high-accuracy** version and **real-time (fast)** version.
-- Image instance segmentation built on both [mmdetection](https://github.com/open-mmlab/mmdetection) and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) are both provided.
-- Vide instance segmentation built on [mmdetection](https://github.com/open-mmlab/mmdetection) is provided.
+- Image instance segmentation is built on both [mmdetection](https://github.com/open-mmlab/mmdetection) and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark).
+- Vide instance segmentation is built on [mmdetection](https://github.com/open-mmlab/mmdetection).
 - Datasets: [MS COCO](http://cocodataset.org/#home) for image instance segmentation and [YouTube-VIS](https://youtube-vos.org/dataset/vis/) for video instance segmentation.
 
 <table>
