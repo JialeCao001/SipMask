@@ -52,8 +52,8 @@ python tools/test_net.py --config-file configs/sipmask/sipmask_R_50_FPN_1x.yaml 
 ## Results
 |    name   |    backbone     |  input size |  iteration   | ms-train | val. box AP | val. mask AP | download|
 | :--------:| :-------------: | :-----------:| :---------: | :-----: | :------: | :------: | :----------: |
-| SipMask  |     ResNet-50     |  800 &times; 1333|  1x  |   no  |    39.5    |    34.2   |          [model](https://drive.google.com/open?id=11lc6zOSURYca0jCbxH-tNnd6atYyPSf2)         |
-| SipMask  |     ResNet-101    |  800 &times; 1333  |  3x  |  yes    |    44.1  |    37.8    |       [model](https://drive.google.com/open?id=13_KwrGVE31c7Ts4IqGlwDzzopwZUYb65)         |
+| SipMask  |     R50     |  800 &times; 1333|  1x  |   no  |    39.5    |    34.2   |          [model](https://drive.google.com/open?id=11lc6zOSURYca0jCbxH-tNnd6atYyPSf2)         |
+| SipMask  |     R101    |  800 &times; 1333  |  3x  |  yes    |    44.1  |    37.8    |       [model](https://drive.google.com/open?id=13_KwrGVE31c7Ts4IqGlwDzzopwZUYb65)         |
 
 
 ## SipMask-mmdetection (image instance segmentation)
@@ -84,12 +84,12 @@ python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./wor
 | :---------: | :-------------: | :-------------------: | :-----: | :-----: | :-----:| :-----: |:------: | :-----------------: |
 |   SipMask   |     R50     |  800&times;1333  |  1x  |   no  |  yes  |    38.2 |    33.5 |  [model](https://drive.google.com/open?id=1t-RSMObxjeSJvHW1tQl8uBUQUU8RKTZO)         |
 |   SipMask   |     R50     |  800&times;1333   |  2x  |  yes |   yes  |   40.8 |   35.6  |  [model](https://drive.google.com/open?id=1r7u2WUOuFSWRfRBoWRCADJo7nEchwFzq)         |
-|   SipMask   |     R50     |  544 &times; 544  |  6x  |  yes |   no  |   36.0 |   31.7  |  [model](https://drive.google.com/file/d/1IFVJN_ZWvF13bqocfFeT42gN2h0F1hFZ/view?usp=sharing)         |
-|   SipMask   |     R50     |  544 &times; 544  |  10x  |  yes |   yes  |   37.1 |   32.4  |  [model](https://drive.google.com/file/d/1B2cr5gK1yM4KDO5DL7snlazFnILLk_2Q/view?usp=sharing)         |
-|   SipMask   |     R101    |  544 &times; 544   |  6x  |  yes |   no  |   38.4 |  33.6  |  [model](https://drive.google.com/file/d/1KrLEKjRzaZ_eiaZ83dIgqQT7V2z1ywA9/view?usp=sharing)         |
-|   SipMask   |     R101    |  544 &times; 544   |  10x  |  yes |   yes  |   40.3 |   34.8 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
-|   SipMask++ |     R101-DCN    |  544 &times; 544   |  6x  |  yes |   no  |   40.1 |   35.2 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
-|   SipMask++ |     R101-DCN    |  544 &times; 544   |  6x  |  yes |   yes  |   41.3 |   36.1 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
+|   SipMask   |     R50     |  544&times;544  |  6x  |  yes |   no  |   36.0 |   31.7  |  [model](https://drive.google.com/file/d/1IFVJN_ZWvF13bqocfFeT42gN2h0F1hFZ/view?usp=sharing)         |
+|   SipMask   |     R50     |  544&times;544  |  10x  |  yes |   yes  |   37.1 |   32.4  |  [model](https://drive.google.com/file/d/1B2cr5gK1yM4KDO5DL7snlazFnILLk_2Q/view?usp=sharing)         |
+|   SipMask   |     R101    |  544&times;544   |  6x  |  yes |   no  |   38.4 |  33.6  |  [model](https://drive.google.com/file/d/1KrLEKjRzaZ_eiaZ83dIgqQT7V2z1ywA9/view?usp=sharing)         |
+|   SipMask   |     R101    |  544&times;544   |  10x  |  yes |   yes  |   40.3 |   34.8 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
+|   SipMask++ |     R101-DCN    |  544&times;544   |  6x  |  yes |   no  |   40.1 |   35.2 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
+|   SipMask++ |     R101-DCN    |  544&times;544   |  6x  |  yes |   yes  |   41.3 |   36.1 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
 
 
 - GN indicates group normalization used in prediction branch.
@@ -133,8 +133,8 @@ python ./tools/test_video.py configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py
 ## Results
 |    name |    backbone     |  input size |  iteration  | ms-train | val. mask AP | download|
 | :--------:| :-------------: | :-------------------:| :-----: | :-----: | :------: | :-----------------: |
-| SipMask |     ResNet-50   |  360 &times; 640  |  1x  |   no  |    31.8     |          [model](https://drive.google.com/open?id=15Iz33mWg70GQF2DQK4sz4ujOkk135ywD)         |
-| SipMask |     ResNet-50   |  360 &times; 640  |  1x  |   yes  |    33.7     |          [model](https://drive.google.com/open?id=1ed8vtcQlgzMzmYUeYGA5qZAXAE9fBHKs)         |
+| SipMask |     R50   |  360 &times; 640  |  1x  |   no  |    31.8     |          [model](https://drive.google.com/open?id=15Iz33mWg70GQF2DQK4sz4ujOkk135ywD)         |
+| SipMask |     R50   |  360 &times; 640  |  1x  |   yes  |    33.7     |          [model](https://drive.google.com/open?id=1ed8vtcQlgzMzmYUeYGA5qZAXAE9fBHKs)         |
 
 - The generated results on YouTube-VIS should be uploaded to [codalab](https://competitions.codalab.org/competitions/20128#participate-submit_results) for evaluation.
 
