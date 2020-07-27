@@ -127,7 +127,7 @@ python ./tools/test_video.py configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py
 ```
 
 - CONFIG_FILE  of SipMask-VIS is under the folder of [SipMask-VIS/configs/sipmask](SipMask-VIS/configs/sipmask).
-- The learned model on MS COCO dataset is usually used as the pretrained model for video instance segmentation.
+- The model pretrained on MS COCO dataset is usually used for initialization.
 
 
 ##### Results
