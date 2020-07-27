@@ -93,7 +93,8 @@ python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./wor
 
 
 - GN indicates group normalization used in prediction branch.
-- Model with the input size of 544 &times; 544 is trained in SSD training style.
+- Model with the input size of 800&times;1333 fcoses on high-accuracy, which is trained in RetinaNet style.
+- Model with the input size of 544&times;544 fcoses on real-time, which is trained in SSD style.
 - ++ indicates adding deformable convolutions with interval of 3 in backbone and mask re-scoring module.
 - The implemented FCOS in mmdetection is a slightly worse than that in maskrcnn-benchmark. 
 
