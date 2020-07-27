@@ -1,0 +1,12 @@
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1t-RSMObxjeSJvHW1tQl8uBUQUU8RKTZO' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1t-RSMObxjeSJvHW1tQl8uBUQUU8RKTZO" -O sipmask_r50_caffe_1x.pth && rm -rf /tmp/cookies.txt
+
+
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1IFVJN_ZWvF13bqocfFeT42gN2h0F1hFZ' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1IFVJN_ZWvF13bqocfFeT42gN2h0F1hFZ" -O sipmask_r50_caffe_ssd_6x.pth && rm -rf /tmp/cookies.txt
+
+CUDA_VISIBLE_DEVICES=7 python ./tools/test.py  ./configs/sipmask/sipmask_r50_caffe_fpn_ssd_6x.py ./sipmask_r50_caffe_ssd_6x.pth --out results.pkl --eval bbox segm
+
+
+
+
+
+https://drive.google.com/file/d/1t-RSMObxjeSJvHW1tQl8uBUQUU8RKTZO/view?usp=sharing
