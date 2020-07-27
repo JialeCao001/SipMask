@@ -26,8 +26,9 @@ The official implementation of "SipMask: Spatial Information Preservation for Fa
 Single-stage instance segmentation approaches have recently gained popularity due to their speed and simplicity, but are still lagging behind in accuracy, compared to two-stage methods. We propose a fast single-stage instance segmentation method, called SipMask, that preserves instance-specific spatial information by separating the mask prediction of an instance to different sub-regions of a detected bounding-box. Our main contribution is a novel light-weight spatial preservation (SP) module that generates a separate  set of spatial coefficients for each sub-region within a bounding-box, leading to improved mask predictions. It also enables accurate delineation of spatially adjacent instances. Further, we introduce a mask alignment weighting loss and a feature alignment scheme to better correlate mask prediction with object detection.
 
 ## SipMask-benchmark (image instance segmentation)
-This code is an implementation for image instance segmenation based on the official implementation of [FCOS](https://github.com/tianzhi0549/FCOS), which is based on [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). If you want to use this code for instance segmentation, please download the coresponidng folder [SipMask-benchmark](SipMask-benchmark/) and refer to [INSTALL.md](SipMask-benchmark/INSTALL.md) for installation.
-I use pytorch1.1.0, cuda9.0/10.0, and mmcv0.4.3.
+- This code is an implementation built on the official implementation of [FCOS](https://github.com/tianzhi0549/FCOS), which is based on [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). 
+- If you want to use this code for instance segmentation, please download the coresponidng folder [SipMask-benchmark](SipMask-benchmark/) and refer to [INSTALL.md](SipMask-benchmark/INSTALL.md) for installation.
+- I use pytorch1.1.0 and cuda9.0/10.0.
 
 #####  Train with multiple GPUs
 
