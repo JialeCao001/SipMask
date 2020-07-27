@@ -27,7 +27,7 @@ Single-stage instance segmentation approaches have recently gained popularity du
 
 ## SipMask-benchmark (image instance segmentation)
 - This project is built on the official implementation of [FCOS](https://github.com/tianzhi0549/FCOS), which is based on [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). 
-- If you want to use it for instance segmentation, please use [SipMask-benchmark](SipMask-benchmark/) and refer to [INSTALL.md](SipMask-benchmark/INSTALL.md) for installation.
+- Please use [SipMask-benchmark](SipMask-benchmark/) and refer to [INSTALL.md](SipMask-benchmark/INSTALL.md) for installation.
 - I use pytorch1.1.0 and cuda9.0/10.0.
 
 #####  Train with multiple GPUs
