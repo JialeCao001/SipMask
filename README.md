@@ -1,5 +1,5 @@
 # SipMask
-The official implementation of "SipMask: Spatial Information Preservation for Fast Image and Video Instance Segmentation (ECCV2020)" built on mmdetection and maskrcnn-benchmark.
+This is the official implementation of "SipMask: Spatial Information Preservation for Fast Image and Video Instance Segmentation (ECCV2020)" built on mmdetection and maskrcnn-benchmark.
 
 - **Single-stage instance segmentation for both image and video instance segmentation.**
 - Two different versions are provided: **high-accuracy** version and **real-time (fast)** version.
@@ -88,8 +88,8 @@ python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./wor
 |   SipMask   |     R50     |  544&times;544  |  10x  |  yes |   yes  |   37.1 |   32.4  |  [model](https://drive.google.com/file/d/1B2cr5gK1yM4KDO5DL7snlazFnILLk_2Q/view?usp=sharing)         |
 |   SipMask   |     R101    |  544&times;544   |  6x  |  yes |   no  |   38.4 |  33.6  |  [model](https://drive.google.com/file/d/1KrLEKjRzaZ_eiaZ83dIgqQT7V2z1ywA9/view?usp=sharing)         |
 |   SipMask   |     R101    |  544&times;544   |  10x  |  yes |   yes  |   40.3 |   34.8 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
-|   SipMask++ |     R101-D    |  544&times;544   |  6x  |  yes |   no  |   40.1 |   35.2 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
-|   SipMask++ |     R101-D    |  544&times;544   |  10x  |  yes |   yes  |   41.3 |   36.1 |  [model](https://drive.google.com/file/d/1-KZI9xyoaX-8yEXqgWlqsmrh2buGrFoE/view?usp=sharing)         |
+|   SipMask++ |     R101-D    |  544&times;544   |  6x  |  yes |   no  |   40.1 |   35.2 |  [model](https://drive.google.com/file/d/1evdCVqGVKfKrO1RHivuqF1FaDF54gXh9/view?usp=sharing)         |
+|   SipMask++ |     R101-D    |  544&times;544   |  10x  |  yes |   yes  |   41.3 |   36.1 |  [model](https://drive.google.com/file/d/1APPkFQ8U4HJ4B8xhcyyn-rB8uOZqJGa7/view?usp=sharing)         |
 
 
 - GN indicates group normalization used in prediction branch.
