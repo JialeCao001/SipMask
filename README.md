@@ -27,6 +27,7 @@ Single-stage instance segmentation approaches have recently gained popularity du
 
 ## SipMask-benchmark (image instance segmentation)
 - This project is built on the official implementation of [FCOS](https://github.com/tianzhi0549/FCOS), which is based on [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). 
+- high-quality version is provided.
 - Please use [SipMask-benchmark](SipMask-benchmark/) and refer to [INSTALL.md](SipMask-benchmark/INSTALL.md) for installation.
 - I use pytorch1.1.0 and cuda9.0/10.0.
 
@@ -56,8 +57,10 @@ python tools/test_net.py --config-file configs/sipmask/sipmask_R_50_FPN_1x.yaml 
 
 
 ## SipMask-mmdetection (image instance segmentation)
-This code is an implementation for image instance segmenation based on [mmdetection](https://github.com/open-mmlab/mmdetection). If you want to use this code for instance segmentation, please download the the coresponidng folder SipMask-mmdetection and refer to [INSTALL.md](SipMask-mmdetection/docs/INSTALL.md) for installation.
-
+- This project is built on [mmdetection](https://github.com/open-mmlab/mmdetection).
+- high-quality version and real-time version are both provided.
+- Please use [SipMask-mmdetection](SipMask-mmdetection/) and refer to [INSTALL.md](SipMask-mmdetection/docs/INSTALL.md) for installation.
+- I use pytorch1.1.0, cuda9.0/10.0, mmcv0.4.3.
 #####  Train with multiple GPUs
 
 ```shell
@@ -95,8 +98,9 @@ python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./wor
 - Please note that the implemented FCOS in mmdetection is a slightly worse than that in maskrcnn-benchmark. 
 
 ## SipMask-VIS (video instance segmentation)
-This code is an implementation for video instance segmenation based on [mmdetection](https://github.com/open-mmlab/mmdetection). If you want to use this code for video instance segmentation, please download the coresponding folder SipMask-VIS and refer to [INSTALL.md](SipMask-VIS/INSTALL.md) for installation.
-I use pytorch1.1.0, cuda9.0/10.0, and mmcv0.4.3.
+- This project is an implementation for video instance segmenation based on [mmdetection](https://github.com/open-mmlab/mmdetection). 
+- Please use [SipMask-VIS](SipMask-VIS/) and refer to [INSTALL.md](SipMask-VIS/INSTALL.md) for installation.
+- I use pytorch1.1.0, cuda9.0/10.0, and mmcv0.2.1.
 
 Please note that, to run YouTube-VIS dataset like [MaskTrackRCNN](https://github.com/youtubevos/MaskTrackRCNN), install the cocoapi for youtube-vis instead of installing the original cocoapi for coco as follows.
 ```shell
@@ -122,9 +126,7 @@ e.g.,
 python ./tools/test_video.py configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./work_dirs/sipmask_r50_fpn_1x.pth --out results.pkl --eval segm
 ```
 
-
 - CONFIG_FILE  of SipMask-VIS is under the folder of [SipMask-VIS/configs/sipmask-vis](SipMask-benchmark/configs/sipmask).
-
 - The learned model on MS COCO dataset is usually used as the pretrained model for video instance segmentation.
 
 
