@@ -126,7 +126,7 @@ e.g.,
 python ./tools/test_video.py configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./work_dirs/sipmask_r50_fpn_1x.pth --out results.pkl --eval segm
 ```
 
-- CONFIG_FILE  of SipMask-VIS is under the folder of [SipMask-VIS/configs/sipmask-vis](SipMask-benchmark/configs/sipmask).
+- CONFIG_FILE  of SipMask-VIS is under the folder of [SipMask-VIS/configs/sipmask](SipMask-VIS/configs/sipmask).
 - The learned model on MS COCO dataset is usually used as the pretrained model for video instance segmentation.
 
 
