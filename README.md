@@ -27,9 +27,9 @@ Single-stage instance segmentation approaches have recently gained popularity du
 
 ## SipMask-benchmark (image instance segmentation)
 - This project is built on the official implementation of [FCOS](https://github.com/tianzhi0549/FCOS), which is based on [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). 
-- high-quality version is provided.
+- High-quality version is provided.
 - Please use [SipMask-benchmark](SipMask-benchmark/) and refer to [INSTALL.md](SipMask-benchmark/INSTALL.md) for installation.
-- I use pytorch1.1.0 and cuda9.0/10.0.
+- PyTorch1.1.0 and cuda9.0/10.0 are used by me.
 
 #####  Train with multiple GPUs
 
@@ -58,9 +58,9 @@ python tools/test_net.py --config-file configs/sipmask/sipmask_R_50_FPN_1x.yaml 
 
 ## SipMask-mmdetection (image instance segmentation)
 - This project is built on [mmdetection](https://github.com/open-mmlab/mmdetection).
-- high-quality version and real-time version are both provided.
+- High-quality version and real-time version are both provided.
 - Please use [SipMask-mmdetection](SipMask-mmdetection/) and refer to [INSTALL.md](SipMask-mmdetection/docs/INSTALL.md) for installation.
-- I use pytorch1.1.0, cuda9.0/10.0, mmcv0.4.3.
+- PyTorch1.1.0, cuda9.0/10.0, and mmcv0.4.3 are used by me.
 #####  Train with multiple GPUs
 
 ```shell
@@ -101,7 +101,7 @@ python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./wor
 ## SipMask-VIS (video instance segmentation)
 - This project is an implementation for video instance segmenation based on [mmdetection](https://github.com/open-mmlab/mmdetection). 
 - Please use [SipMask-VIS](SipMask-VIS/) and refer to [INSTALL.md](SipMask-VIS/INSTALL.md) for installation.
-- I use pytorch1.1.0, cuda9.0/10.0, and mmcv0.2.1.
+- PyTorch1.1.0, cuda9.0/10.0, and mmcv0.2.1 are used by me.
 
 Please note that, to run YouTube-VIS dataset like [MaskTrackRCNN](https://github.com/youtubevos/MaskTrackRCNN), install the cocoapi for youtube-vis instead of installing the original cocoapi for coco as follows.
 ```shell
