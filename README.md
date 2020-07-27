@@ -94,7 +94,7 @@ python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./wor
 
 - GN indicates group normalization used in prediction branch.
 - Model with the input size of 544 &times; 544 is trained in SSD training style.
-- SipMask++ indicates adding mask re-scoring module for prediction and deformable convolutions with interval of 3 in the backbone.
+- ++ indicates adding deformable convolutions with interval of 3 in backbone and mask re-scoring module.
 - Please note that the implemented FCOS in mmdetection is a slightly worse than that in maskrcnn-benchmark. 
 
 ## SipMask-VIS (video instance segmentation)
