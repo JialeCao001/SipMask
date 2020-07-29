@@ -1,5 +1,5 @@
 # SipMask
-This is the official implementation of "SipMask: Spatial Information Preservation for Fast Image and Video Instance Segmentation (ECCV2020)" built on mmdetection and maskrcnn-benchmark.
+This is the official implementation of "SipMask: Spatial Information Preservation for Fast Image and Video Instance Segmentation (ECCV2020)" built on the open-source mmdetection and maskrcnn-benchmark.
 
 - **Single-stage method for both image and video instance segmentation.**
 - Two different versions are provided: **high-accuracy** version and **real-time (fast)** version.
