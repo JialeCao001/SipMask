@@ -187,7 +187,6 @@ class SipMaskHead(nn.Module):
             self.feat_channels, self.cls_out_channels, 3, padding=1)
         self.fcos_reg = nn.Conv2d(self.feat_channels, 4, 3, padding=1)
         self.fcos_centerness = nn.Conv2d(self.feat_channels, 1, 3, padding=1)
-
         self.scales = nn.ModuleList([Scale(1.0) for _ in self.strides])
 
         self.nc = 32
@@ -251,8 +250,6 @@ class SipMaskHead(nn.Module):
         for x, scale, stride in zip(feats,self.scales, self.strides):
             cls_feat = x
             reg_feat = x
-
-
             for cls_layer in self.cls_convs:
                 cls_feat = cls_layer(cls_feat)
 
@@ -484,7 +481,6 @@ class SipMaskHead(nn.Module):
 
                 loss_iou += self.loss_iou(pred_iou.view(-1, 1), iou_targets.view(-1, 1), iou_weights.view(-1, 1))
                 num_iou += torch.sum(iou_weights.detach())
-        # print(num_iou)
         loss_mask = loss_mask/num_imgs
         if self.rescoring_flag:
             loss_iou = loss_iou * 10 / num_iou.detach()
@@ -714,7 +710,6 @@ class SipMaskHead(nn.Module):
                     zip(pos_left, pos_top, pos_right, pos_down, gt_masks, gt_bboxes):
                 gt_mask = mmcv.imrescale(gt_mask, scale=1. / stride)
                 gt_mask = torch.Tensor(gt_mask)
-                # print('aa', gt_mask.shape,label.shape,mask_size)
 
                 label[py1:py2 + 1, px1:px2 + 1] = gt_mask[py1:py2 + 1, px1:px2 + 1]
                 center_target[py1:py2 + 1, px1:px2 + 1, 0] = x1 / w
@@ -863,6 +858,7 @@ class SipMaskHead(nn.Module):
             left_right.min(dim=-1)[0] / left_right.max(dim=-1)[0]) * (
                 top_bottom.min(dim=-1)[0] / top_bottom.max(dim=-1)[0])
         return torch.sqrt(centerness_targets)
+
     def fast_nms(self, boxes, scores, masks, iou_threshold = 0.5, top_k = 200, score_thr=0.1):
         scores, idx = scores.sort(1, descending=True)
 

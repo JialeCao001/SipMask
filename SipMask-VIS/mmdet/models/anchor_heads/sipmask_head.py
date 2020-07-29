@@ -169,7 +169,6 @@ class SipMaskHead(nn.Module):
         self.prev_roi_feats = None
         self.prev_bboxes = None
         self.prev_det_labels = None
-        # print(center_sampling)
         self._init_layers()
 
     def _init_layers(self):
@@ -358,7 +357,6 @@ class SipMaskHead(nn.Module):
                 bbox_pred = bbox_pred_list[i]
                 bbox_target = bbox_target_list[i]
                 points = all_level_points[i]
-                # print(bbox_target.shape,points.shape)
                 bboxes.append(distance2bbox(points, bbox_pred))
                 targets.append(distance2bbox(points, bbox_target))
 
@@ -455,16 +453,16 @@ class SipMaskHead(nn.Module):
             bbox_dt = bbox_dt[pos_inds, :4]
 
             area = (bbox_dt[:, 2] - bbox_dt[:, 0]) * (bbox_dt[:, 3] - bbox_dt[:, 1])
-            bbox_dt = bbox_dt[area > 0, :]
-            idx_gt = idx_gt[area > 0]
-            cof_pred = cof_pred[area > 0]
-            if bbox_dt.shape[0] == 0:
-                loss_mask += area.sum()
+            bbox_dt = bbox_dt[area > 1.0, :]
+            idx_gt = idx_gt[area > 1.0]
+            cof_pred = cof_pred[area > 1.0]
+            if bbox_dt.shape[0] == 1.0:
+                loss_mask += area.sum()*0
                 continue
 
             bbox_gt = gt_bboxes[i]
             cls_score = flatten_cls_scores1[i, pos_inds, labels[pos_inds] - 1].sigmoid().detach()
-            cls_score = cls_score[area > 0]
+            cls_score = cls_score[area > 1.0]
             ious = bbox_overlaps(bbox_gt[idx_gt] / 2, bbox_dt, is_aligned=True)
             weighting = cls_score * ious
             weighting = weighting / (torch.sum(weighting) + 0.0001) * len(weighting)
@@ -533,7 +531,7 @@ class SipMaskHead(nn.Module):
         loss_match = loss_match / num_imgs
         match_acc = match_acc / n_total
         if loss_mask == 0:
-            print('aaaaaaaaaaaaaaaa')
+            loss_mask = bbox_dt[:, 0].sum()*0
 
         return dict(
             loss_cls=loss_cls,
@@ -629,9 +627,6 @@ class SipMaskHead(nn.Module):
 
                 assert self.prev_roi_feats is not None
                 # only support one image at a time
-                bbox_img_n = [res_det_bboxes.size(0)]
-                prev_bbox_img_n = [self.prev_roi_feats.size(0)]
-
                 prod = torch.mm(det_roi_feats, torch.transpose(self.prev_roi_feats, 0, 1))
                 m = prod.size(0)
                 dummy = torch.zeros(m, 1, device=torch.cuda.current_device())
