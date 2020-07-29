@@ -243,7 +243,6 @@ class SipMaskLossComputation(object):
             r = bboxes[:, 2][None] - xs[:, None]
             b = bboxes[:, 3][None] - ys[:, None]
             reg_targets_per_im = torch.stack([l, t, r, b], dim=2)
-            
 
             if self.center_sampling_radius > 0:
                 is_in_boxes = self.get_sample_region(
@@ -316,7 +315,6 @@ class SipMaskLossComputation(object):
                 per_locations[:, 1] + per_box_regression[:, 3],
             ], dim=1)
             results.append(detections)
-        # print(len(detections))
         return results
 
     def __call__(self, locations, box_cls, box_regression, centerness, cof_preds, feat_mask, targets):
@@ -405,7 +403,6 @@ class SipMaskLossComputation(object):
             reduce_sum(centerness_flatten.new_tensor([0.0]))
             centerness_loss = centerness_flatten.sum()
 
-
         ##########mask loss#################
         num_imgs = len(flatten_sampled_boxes)
         flatten_cls_scores1 = []
@@ -421,8 +418,6 @@ class SipMaskLossComputation(object):
         flatten_cof_preds = torch.cat(flatten_cof_preds,dim=1)
 
         loss_mask = 0
-
-
         for i in range(num_imgs):
             labels = torch.cat([labels_level.flatten() for labels_level in labels_list[i]])
             # bbox_gt = torch.cat([gt_level.reshape(-1,4) for gt_level in bbox_gt_list[i]])
@@ -430,7 +425,6 @@ class SipMaskLossComputation(object):
             bbox_dt = bbox_dt.detach()
             pos_inds = labels > 0
 
-            # # print(pos_inds.shape)
             cof_pred = flatten_cof_preds[i][pos_inds]
             img_mask = feat_mask[i]
             mask_h = feat_mask[i].shape[1]
@@ -440,18 +434,17 @@ class SipMaskLossComputation(object):
             gt_masks = targets[i].get_field("masks").get_mask_tensor().to(dtype=torch.float32,device=feat_mask.device)
             gt_masks = gt_masks.reshape(-1,gt_masks.shape[-2],gt_masks.shape[-1])
 
-            # print(torch.max(bbox_dt[:,2]),torch.max(bbox_dt[:,3]))
             area = (bbox_dt[:,2]-bbox_dt[:,0])*(bbox_dt[:,3]-bbox_dt[:,1])
-            bbox_dt = bbox_dt[area>0,:]
-            idx_gt = idx_gt[area>0]
-            cof_pred = cof_pred[area>0]
+            bbox_dt = bbox_dt[area>1.0,:]
+            idx_gt = idx_gt[area>1.0]
+            cof_pred = cof_pred[area>1.0]
             if bbox_dt.shape[0]==0:
                 continue
 
 
             bbox_gt = targets[i].bbox
             cls_score = flatten_cls_scores1[i, pos_inds, labels[pos_inds] - 1].sigmoid().detach()
-            cls_score = cls_score[area>0]
+            cls_score = cls_score[area>1.0]
             ious = bbox_overlaps(bbox_gt[idx_gt]/2, bbox_dt, is_aligned=True)
             weighting = cls_score * ious
             weighting = weighting/torch.sum(weighting)*len(weighting)

@@ -106,7 +106,6 @@ class SipMaskHead(torch.nn.Module):
             in_channels, num_classes, kernel_size=3, stride=1,
             padding=1
         )
-
         self.bbox_pred = nn.Conv2d(
             in_channels, 4, kernel_size=3, stride=1,
             padding=1
@@ -175,7 +174,6 @@ class SipMaskHead(torch.nn.Module):
             ########COFFECIENTS###############
             cof_pred = self.sip_cof(cls_tower1)
             cof_preds.append(cof_pred)
-
 
             ############contextual#######################
             if count < 3:
