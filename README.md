@@ -138,8 +138,8 @@ python tools/test_video.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FIL
 ##### Results
 |    name |    backbone     |  input size |  iteration  | ms-train | val. mask AP | download|
 | :--------:| :-------------: | :-------------------:| :-----: | :-----: | :------: | :-----------------: |
-| SipMask |     R50   |  360 &times; 640  |  1x  |   no  |    32.5     |          [model](https://drive.google.com/open?id=15Iz33mWg70GQF2DQK4sz4ujOkk135ywD)         |
-| SipMask |     R50   |  360 &times; 640  |  1x  |   yes  |    33.7     |          [model](https://drive.google.com/open?id=1ed8vtcQlgzMzmYUeYGA5qZAXAE9fBHKs)         |
+| SipMask |     R50   |  360 &times; 640  |  1x  |   no  |    32.5     |          [model](https://drive.google.com/file/d/1HIQyzApw6b7CUdTxchZT_TIcGYcDodbn/view?usp=sharing)         |
+| SipMask |     R50   |  360 &times; 640  |  1x  |   yes  |    33.7     |          [model](https://drive.google.com/file/d/1BWU8_eaDkGcJ5YEXRzs5oDg6E3adgXWt/view?usp=sharing)         |
 
 - The generated results on YouTube-VIS should be uploaded to [codalab](https://competitions.codalab.org/competitions/20128#participate-submit_results) for evaluation.
 
