@@ -23,7 +23,7 @@ model = dict(
         type='SipMaskHead',
         num_classes=41,
         in_channels=256,
-        stacked_convs=4,
+        stacked_convs=3,
         feat_channels=256,
         strides=[8, 16, 32, 64, 128],
         loss_cls=dict(
@@ -49,9 +49,9 @@ train_cfg = dict(
     pos_weight=-1,
     debug=False)
 test_cfg = dict(
-    nms_pre=500,
+    nms_pre=200,
     min_bbox_size=0,
-    score_thr=0.01,
+    score_thr=0.03,
     nms=dict(type='nms', iou_thr=0.5),
     max_per_img=10)
 # dataset settings

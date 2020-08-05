@@ -101,7 +101,7 @@ def main():
     if args.load_result:
         outputs = mmcv.load(args.out)
     else:
-        outputs = single_test(model, data_loader, False, save_path=args.save_path)
+        outputs = single_test(model, data_loader, args.show, save_path=args.save_path)
 
     if args.out:
         if not args.load_result:

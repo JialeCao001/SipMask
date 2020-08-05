@@ -229,7 +229,7 @@ class SipMaskHead(nn.Module):
                     conv_cfg=self.conv_cfg,
                     norm_cfg=self.norm_cfg,
                     bias=self.norm_cfg is None))
-        self.fovea_track = nn.Conv2d(self.feat_channels * 3, 512, 1, padding=0)
+        self.sipmask_track = nn.Conv2d(self.feat_channels * 3, 512, 1, padding=0)
 
     def init_weights(self):
         for m in self.cls_convs:
@@ -308,10 +308,10 @@ class SipMaskHead(nn.Module):
         feat_masks = F.interpolate(feat_masks, scale_factor=4, mode='bilinear', align_corners=False)
 
         track_feats = torch.cat(track_feats, dim=1)
-        track_feats = self.fovea_track(track_feats)
+        track_feats = self.sipmask_track(track_feats)
         if flag_train:
             track_feats_ref = torch.cat(track_feats_ref, dim=1)
-            track_feats_ref = self.fovea_track(track_feats_ref)
+            track_feats_ref = self.sipmask_track(track_feats_ref)
             return cls_scores, bbox_preds, centernesses, cof_preds, feat_masks, track_feats, track_feats_ref
         else:
             return cls_scores, bbox_preds, centernesses, cof_preds, feat_masks, track_feats, track_feats

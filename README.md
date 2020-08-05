@@ -126,6 +126,10 @@ python tools/test_video.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FIL
 e.g.,
 python ./tools/test_video.py configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./work_dirs/sipmask_r50_fpn_1x.pth --out results.pkl --eval segm
 ```
+If you want to save the results of video instance segmentation, please use the following command:
+```shell
+python tools/test_video.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FILE}] --eval segm --show --save_path='./demo/vis_results'
+```
 
 - CONFIG_FILE  of SipMask-VIS is under the folder of [SipMask-VIS/configs/sipmask](SipMask-VIS/configs/sipmask).
 - The model pretrained on MS COCO dataset is used for weight initialization.
@@ -134,7 +138,7 @@ python ./tools/test_video.py configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py
 ##### Results
 |    name |    backbone     |  input size |  iteration  | ms-train | val. mask AP | download|
 | :--------:| :-------------: | :-------------------:| :-----: | :-----: | :------: | :-----------------: |
-| SipMask |     R50   |  360 &times; 640  |  1x  |   no  |    31.8     |          [model](https://drive.google.com/open?id=15Iz33mWg70GQF2DQK4sz4ujOkk135ywD)         |
+| SipMask |     R50   |  360 &times; 640  |  1x  |   no  |    32.5     |          [model](https://drive.google.com/open?id=15Iz33mWg70GQF2DQK4sz4ujOkk135ywD)         |
 | SipMask |     R50   |  360 &times; 640  |  1x  |   yes  |    33.7     |          [model](https://drive.google.com/open?id=1ed8vtcQlgzMzmYUeYGA5qZAXAE9fBHKs)         |
 
 - The generated results on YouTube-VIS should be uploaded to [codalab](https://competitions.codalab.org/competitions/20128#participate-submit_results) for evaluation.
