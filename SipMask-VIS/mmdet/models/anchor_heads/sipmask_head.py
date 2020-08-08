@@ -456,7 +456,7 @@ class SipMaskHead(nn.Module):
             bbox_dt = bbox_dt[area > 1.0, :]
             idx_gt = idx_gt[area > 1.0]
             cof_pred = cof_pred[area > 1.0]
-            if bbox_dt.shape[0] == 1.0:
+            if bbox_dt.shape[0] == 0:
                 loss_mask += area.sum()*0
                 continue
 
