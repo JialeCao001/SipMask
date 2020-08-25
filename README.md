@@ -147,7 +147,7 @@ python tools/test_video.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FIL
 If the project helps your research, please cite this paper.
 
 ```
-@misc{Cao_SipMask_ECCV_2020,
+@article{Cao_SipMask_ECCV_2020,
   author =       {Jiale Cao and Rao Muhammad Anwer and Hisham Cholakkal and Fahad Shahbaz Khan and Yanwei Pang and Ling Shao},
   title =        {SipMask: Spatial Information Preservation for Fast Instance Segmentation},
   journal =      {Proc. European Conference on Computer Vision},
