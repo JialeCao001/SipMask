@@ -101,7 +101,7 @@ python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./wor
 ## SipMask-VIS (video instance segmentation)
 - This project is an implementation for video instance segmenation based on [mmdetection](https://github.com/open-mmlab/mmdetection). 
 - Please use [SipMask-VIS](SipMask-VIS/) and refer to [INSTALL.md](SipMask-VIS/INSTALL.md) for installation.
-- PyTorch1.1.0, cuda9.0/10.0, and mmcv0.2.1 are used by me.
+- PyTorch1.1.0, cuda9.0/10.0, and mmcv0.2.12 are used by me.
 
 Please note that, to run YouTube-VIS dataset like [MaskTrackRCNN](https://github.com/youtubevos/MaskTrackRCNN), install the cocoapi for youtube-vis instead of installing the original cocoapi for coco as follows.
 ```shell
