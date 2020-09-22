@@ -188,7 +188,8 @@ def show_result_pyplot(img,
                        result,
                        class_names,
                        score_thr=0.3,
-                       fig_size=(15, 10)):
+                       fig_size=(15, 10),
+                       out_file=None):
     """Visualize the detection results on the image.
 
     Args:
@@ -202,6 +203,8 @@ def show_result_pyplot(img,
             be written to the out file instead of shown in a window.
     """
     img = show_result(
-        img, result, class_names, score_thr=score_thr, show=False)
-    plt.figure(figsize=fig_size)
-    plt.imshow(mmcv.bgr2rgb(img))
+        img, result, class_names, score_thr=score_thr, show=False, out_file=out_file)
+    if out_file is None:
+        plt.figure(figsize=fig_size)
+        plt.imshow(mmcv.bgr2rgb(img))
+

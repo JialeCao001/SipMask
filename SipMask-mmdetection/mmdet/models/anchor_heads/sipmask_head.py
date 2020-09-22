@@ -618,6 +618,8 @@ class SipMaskHead(nn.Module):
             pos_masks10 = torch.sigmoid(img_mask1 @ det_cofs[:, 64:96].t())
             pos_masks11 = torch.sigmoid(img_mask1 @ det_cofs[:, 96:128].t())
             pos_masks = torch.stack([pos_masks00,pos_masks01,pos_masks10,pos_masks11],dim=0)
+            if rescale == None:
+                scale_factor = scale_factor*0+1.0
             pos_masks = self.crop_cuda(pos_masks, det_bboxes[:,:4] * det_bboxes.new_tensor(scale_factor) / scale)
             # pos_masks = crop_split(pos_masks00, pos_masks01, pos_masks10, pos_masks11,
             #                        det_bboxes * det_bboxes.new_tensor(scale_factor) / scale)
