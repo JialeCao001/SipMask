@@ -645,8 +645,12 @@ class SipMaskHead(nn.Module):
         for i in range(det_bboxes.shape[0]):
             label = det_labels[i]
             mask = masks[i].cpu().numpy()
-            im_mask = np.zeros((ori_shape[0], ori_shape[1]), dtype=np.uint8)
-            shape = np.minimum(mask.shape, ori_shape[0:2])
+            if rescale:
+                im_mask = np.zeros((ori_shape[0], ori_shape[1]), dtype=np.uint8)
+                shape = np.minimum(mask.shape, ori_shape[0:2])
+            else:
+                im_mask = np.zeros((img_shape[0], img_shape[1]), dtype=np.uint8)
+                shape = np.minimum(mask.shape, img_shape[0:2])
             im_mask[:shape[0],:shape[1]] = mask[:shape[0],:shape[1]]
             rle = mask_util.encode(
                 np.array(im_mask[:, :, np.newaxis], order='F'))[0]
