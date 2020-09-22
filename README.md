@@ -76,6 +76,17 @@ e.g.,
 python tools/test.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./work_dirs/sipmask_r50_caffe_1x.pth --out results.pkl --eval bbox segm
 ```
 
+#####  Inference with saved results
+
+With our trained model, detection results of an image can be visualized using the following command.
+```shell
+python ./demo/sipmask_demo.py ${CONFIG_FILE} ${CHECKPOINT_FILE} ${IMAGE_FILE} [--out ${OUT_PATH}]
+e.g.,
+python ./demo/sipmask_demo.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu.py ./sipmask_r50_caffe_1x.pth ./demo/demo.jpg --out ./demo/aa.jpg
+```
+
+
+
 - CONFIG_FILE  of Sipmask is under the folder of [SipMask-mmdetection/configs/sipmask](SipMask-mmdetection/configs/sipmask).
 
 
