@@ -50,7 +50,7 @@ python tools/test_net.py --config-file configs/sipmask/sipmask_R_50_FPN_1x.yaml 
 
 
 ##### Results
-|    name   |    backbone     |  input size |  iteration   | ms-train | val. box AP | val. mask AP | download|
+|    name   |    backbone     |  input size |  epoch | ms-train | val. box AP | val. mask AP | download|
 | :--------:| :-------------: | :-----------:| :---------: | :-----: | :------: | :------: | :----------: |
 | SipMask  |     R50     |  800 &times; 1333|  1x  |   no  |    39.5    |    34.2   |          [model](https://drive.google.com/open?id=11lc6zOSURYca0jCbxH-tNnd6atYyPSf2)         |
 | SipMask  |     R101    |  800 &times; 1333  |  3x  |  yes    |    44.1  |    37.8    |       [model](https://drive.google.com/open?id=13_KwrGVE31c7Ts4IqGlwDzzopwZUYb65)         |
@@ -91,7 +91,7 @@ python ./demo/sipmask_demo.py ./configs/sipmask/sipmask_r50_caffe_fpn_gn_1x_4gpu
 
 
 ##### Results
-|    name     |    backbone     |  input size |  iter.  | ms-train | GN | val. box AP | val. mask AP | download|
+|    name     |    backbone     |  input size |  epoch   | ms-train | GN | val. box AP | val. mask AP | download|
 | :---------: | :-------------: | :-------------------: | :-----: | :-----: | :-----:| :-----: |:------: | :-----------------: |
 |   SipMask   |     R50     |  800&times;1333  |  1x  |   no  |  yes  |    38.2 |    33.5 |  [model](https://drive.google.com/open?id=1t-RSMObxjeSJvHW1tQl8uBUQUU8RKTZO)         |
 |   SipMask   |     R50     |  800&times;1333   |  2x  |  yes |   yes  |   40.8 |   35.6  |  [model](https://drive.google.com/open?id=1r7u2WUOuFSWRfRBoWRCADJo7nEchwFzq)         |
@@ -147,7 +147,7 @@ python tools/test_video.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FIL
 
 
 ##### Results
-|    name |    backbone     |  input size |  iteration  | ms-train | val. mask AP | download|
+|    name |    backbone     |  input size |  epoch   | ms-train | val. mask AP | download|
 | :--------:| :-------------: | :-------------------:| :-----: | :-----: | :------: | :-----------------: |
 | SipMask |     R50   |  360 &times; 640  |  1x  |   no  |    32.5     |          [model](https://drive.google.com/file/d/1HIQyzApw6b7CUdTxchZT_TIcGYcDodbn/view?usp=sharing)         |
 | SipMask |     R50   |  360 &times; 640  |  1x  |   yes  |    33.7     |          [model](https://drive.google.com/file/d/1BWU8_eaDkGcJ5YEXRzs5oDg6E3adgXWt/view?usp=sharing)         |
