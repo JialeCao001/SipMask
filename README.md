@@ -6,7 +6,7 @@ This is the official implementation of "*[SipMask: Spatial Information Preservat
 - **Image instance segmentation** is built on both [mmdetection](https://github.com/open-mmlab/mmdetection) and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark).
 - **Video instance segmentation** is built on [mmdetection](https://github.com/open-mmlab/mmdetection).
 - Datasets: [MS COCO](http://cocodataset.org/#home) for image instance segmentation and [YouTube-VIS](https://youtube-vos.org/dataset/vis/) for video instance segmentation.
-- The **json** results of SipMask using ResNet50 on YouTube-VIS: [Single-scale training (32.5)](https://drive.google.com/file/d/1XG-VwQVuhiSqh-2CMO1peyFygk1zKITQ/view?usp=sharing) and [Multi-scale training json (33.7))](https://drive.google.com/file/d/1XG-VwQVuhiSqh-2CMO1peyFygk1zKITQ/view?usp=sharing)
+- The **json** results of SipMask+ResNet50 on YouTube-VIS: [Single-scale training (32.5)](https://drive.google.com/file/d/1XG-VwQVuhiSqh-2CMO1peyFygk1zKITQ/view?usp=sharing) and [Multi-scale training json (33.7)](https://drive.google.com/file/d/1XG-VwQVuhiSqh-2CMO1peyFygk1zKITQ/view?usp=sharing)
 
 
 <table>
