@@ -35,8 +35,8 @@ conda install pytorch torchvision -c pytorch
 c. Clone the mmdetection repository.
 
 ```shell
-git clone https://github.com/open-mmlab/mmdetection.git
-cd mmdetection
+git clone https://github.com/JialeCao001/SipMask.git
+cd SipMask/SipMask-VIS
 ```
 
 d. Install mmdetection (other dependencies will be installed automatically).
