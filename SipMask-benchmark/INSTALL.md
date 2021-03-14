@@ -39,8 +39,8 @@ python setup.py build_ext install
 
 # install PyTorch Detection
 cd $INSTALL_DIR
-git clone https://github.com/tianzhi0549/FCOS.git
-cd FCOS
+git clone https://github.com/JialeCao001/SipMask.git
+cd SipMask/SipMask-benchmark
 
 # the following will install the lib with
 # symbolic links, so that you can modify
